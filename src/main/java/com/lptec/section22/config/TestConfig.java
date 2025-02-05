@@ -10,10 +10,12 @@ import org.springframework.context.annotation.Profile;
 
 import com.lptec.section22.entities.Category;
 import com.lptec.section22.entities.Order;
+import com.lptec.section22.entities.OrderItem;
 import com.lptec.section22.entities.Product;
 import com.lptec.section22.entities.User;
 import com.lptec.section22.entities.enums.OrderStatus;
 import com.lptec.section22.repositories.CategoryRepository;
+import com.lptec.section22.repositories.OrderItemRepository;
 import com.lptec.section22.repositories.OrderRepository;
 import com.lptec.section22.repositories.ProductRepository;
 import com.lptec.section22.repositories.UserRepository;
@@ -29,10 +31,13 @@ public class TestConfig implements CommandLineRunner {
 	private OrderRepository orderRepository;
 
 	@Autowired
-	CategoryRepository categoryRepository;
+	private CategoryRepository categoryRepository;
 
 	@Autowired
-	ProductRepository productRepository;
+	private ProductRepository productRepository;
+	
+	@Autowired
+	private OrderItemRepository orderItemRepository;
 
 	@Override
 	public void run(String... args) throws Exception {
@@ -69,6 +74,16 @@ public class TestConfig implements CommandLineRunner {
 		userRepository.saveAll(Arrays.asList(u1, u2));
 		orderRepository.saveAll(Arrays.asList(o1, o2, o3));
 
+		OrderItem oi1 = new OrderItem(o1, p1, 2, p1.getPrice());
+		OrderItem oi2 = new OrderItem(o1, p3, 1, p3.getPrice());
+		OrderItem oi3 = new OrderItem(o2, p3, 2, p3.getPrice());
+		OrderItem oi4 = new OrderItem(o3, p5, 2, p5.getPrice());
+		
+
+		orderItemRepository.saveAll(Arrays.asList(oi1, oi2, oi3, oi4));
+		
+		
+		
 	}
 
 }
