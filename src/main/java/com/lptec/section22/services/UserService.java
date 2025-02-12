@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.lptec.section22.entities.User;
 import com.lptec.section22.repositories.UserRepository;
+import com.lptec.section22.services.exceptions.ResourceNotFoundException;
 
 @Service
 public class UserService {
@@ -23,7 +24,7 @@ public class UserService {
 	
 	public User findById(Long id) {
 		Optional<User> obj = repository.findById(id);
-		return obj.get();
+		return obj.orElseThrow(() -> new ResourceNotFoundException(id));
 		
 	}
 	
