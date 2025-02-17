@@ -1,5 +1,5 @@
 # Lab JWeb
-Este projeto foi desenvolvido para exemplificar o uso de tecnologias web utilizando Java com Spring Boot, JSP (JavaServer Pages) e Servlets. O objetivo é construir uma aplicação web simples para aprender os fundamentos do desenvolvimento de sistemas com Java para web.
+Este é um  projeto desenvolvido em acompanhamento de um curso de java do professor Nelio Alves, para exemplificar o uso de tecnologias web utilizando Java com Spring Boot, JSP (JavaServer Pages) e Servlets. O objetivo é construir uma aplicação web simples para aprender os fundamentos do desenvolvimento de sistemas com Java para web.
 
 ## Tecnologias Utilizadas
 - Java com Spring Boot: Framework para construção da aplicação backend.
